@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Movie from "./components/Movie";
 import TopButton from "./components/TopButton";
+import axios from "axios";
 
 class App extends Component {
   state = {
@@ -16,6 +17,7 @@ class App extends Component {
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
   }
+
   handleScroll = () => {
     const { pageNum } = this.state;
     let scroll = window.scrollY;
@@ -38,6 +40,7 @@ class App extends Component {
         />
       );
     });
+
     return list;
   };
 
@@ -59,12 +62,12 @@ class App extends Component {
 
   __callApi = () => {
     const { pageNum } = this.state;
-    return fetch(
-      `https://yts.am/api/v2/list_movies.json?sort_by=rating&limit=12&page=${pageNum}`
-    )
-      .then(res => res.json())
-      .then(json => json.data.movies)
-      .catch(err => console.log(err));
+    return axios
+      .get(
+        `https://yts.am/api/v2/list_movies.json?sort_by=rating&limit=12&page=${pageNum}`
+      )
+      .then(res => res.data.data.movies)
+      .catch();
   };
   render() {
     const { movies } = this.state;
