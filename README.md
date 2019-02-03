@@ -16,4 +16,6 @@
 
 # 앱에 관한 내용
 
-[https://yts.am/api](https://yts.am/api)에서 api를 제공받아 화면에 나타내어 준다.
+[Nomad Coders](https://academy.nomadcoders.co/)의 강의를 보면서 만들었습니다.
+
+[https://yts.am/api](https://yts.am/api)에서 api를 제공받아 화면에 나타낸다.
