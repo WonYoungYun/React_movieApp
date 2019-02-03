@@ -1,0 +1,27 @@
+.disable-button {
+  display: none;
+}
+
+.display-button {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  right: 3%;
+  bottom: 10%;
+  background-color: black;
+  color: #fff;
+  display: block;
+  border: none;
+  border-radius: 50%;
+  font-size: 5rem;
+  line-height: 0.5;
+  opacity: 0.5;
+  transition: all 0.5s;
+}
+.display-button:focus {
+  outline: none;
+}
+.display-button:hover {
+  background-color: #fff;
+  color: #333;
+}
